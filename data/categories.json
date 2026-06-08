@@ -1,0 +1,34 @@
+[
+  {
+    "id": "cat_cafe",
+    "name": "Café",
+    "slug": "cafe",
+    "emoji": "☕",
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": "cat_the",
+    "name": "Thé",
+    "slug": "the",
+    "emoji": "🍵",
+    "order": 2,
+    "active": true
+  },
+  {
+    "id": "cat_machine",
+    "name": "Machines",
+    "slug": "machine",
+    "emoji": "⚙️",
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": "cat_accessoire",
+    "name": "Accessoires",
+    "slug": "accessoire",
+    "emoji": "🎯",
+    "order": 4,
+    "active": true
+  }
+]

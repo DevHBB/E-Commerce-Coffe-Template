@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /api/
+Disallow: /install.php
+Disallow: /pages/checkout.php
+Disallow: /pages/order_success.php
+Disallow: /pages/modify_order.php
+
+# Sitemap généré dynamiquement
+Sitemap: https://VOTRE-DOMAINE.fr/cafe/api/sitemap.php

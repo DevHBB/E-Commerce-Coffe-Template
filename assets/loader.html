@@ -1,0 +1,33 @@
+<!-- loader.html intégré dans header.php -->
+<div id="pageLoader" style="
+  position:fixed;inset:0;background:#0C0C0C;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .4s ease;
+">
+  <div style="text-align:center">
+    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        @keyframes coffeeSteam{0%,100%{transform:translateY(0) scaleX(1);opacity:.7}50%{transform:translateY(-6px) scaleX(1.2);opacity:0}}
+        @keyframes cupBounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}70%{transform:translateY(-4px)}}
+        .steam{animation:coffeeSteam 1.2s ease infinite}
+        .cup{animation:cupBounce 1s ease infinite}
+      </style>
+      <!-- Vapeur -->
+      <path class="steam" d="M22 18 Q24 12 22 6" stroke="#C8561E" stroke-width="1.5" fill="none" stroke-linecap="round" style="animation-delay:.1s"/>
+      <path class="steam" d="M30 18 Q32 11 30 4" stroke="#C8561E" stroke-width="1.5" fill="none" stroke-linecap="round" style="animation-delay:.3s"/>
+      <path class="steam" d="M38 18 Q40 12 38 6" stroke="#C8561E" stroke-width="1.5" fill="none" stroke-linecap="round" style="animation-delay:.5s"/>
+      <!-- Tasse -->
+      <g class="cup">
+        <path d="M15 24 L45 24 L42 44 Q41 46 39 46 L21 46 Q19 46 18 44 Z" fill="#C8561E" rx="2"/>
+        <!-- Anse -->
+        <path d="M45 28 Q54 28 54 35 Q54 42 45 42" stroke="#C8561E" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Café dans la tasse -->
+        <ellipse cx="30" cy="26" rx="13" ry="3" fill="#1A0800"/>
+        <ellipse cx="30" cy="25" rx="11" ry="2" fill="#8C3A10"/>
+        <!-- Soucoupe -->
+        <ellipse cx="30" cy="46" rx="17" ry="3" fill="#8C3A10"/>
+      </g>
+    </svg>
+    <div style="color:rgba(255,255,255,.3);font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;margin-top:.8rem;font-family:Jost,sans-serif">Café Maison</div>
+  </div>
+</div>

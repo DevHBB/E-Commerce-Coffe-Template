@@ -1,0 +1,11 @@
+# Bloquer tout accès web direct au dossier data/
+Require all denied
+
+<Files "*.json">
+    Require all denied
+</Files>
+
+# Bloquer accès au fichier .installed
+<Files ".installed">
+  Require all denied
+</Files>

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a1",
+    "username": "admin",
+    "display_name": "Administrateur",
+    "email": "",
+    "role": "super_admin",
+    "permissions": [
+      "all"
+    ],
+    "active": true,
+    "created": "2024-01-01",
+    "last_login": ""
+  }
+]

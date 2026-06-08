@@ -1,0 +1,44 @@
+[
+  {
+    "id": "a1",
+    "title": "Comment réussir son café filtre",
+    "slug": "reussir-cafe-filtre",
+    "page": "blog",
+    "cat": "Conseil",
+    "excerpt": "V60, Chemex, Aeropress : nos secrets pour une extraction parfaite à la maison, de la mouture à la dégustation.",
+    "content": "<p>Le café filtre est la méthode préférée des baristas de compétition pour révéler la complexité aromatique d'un grand café. Voici nos fondamentaux.</p><h3>Le ratio eau / café</h3><p>Commencez par <strong>60g de café par litre d'eau</strong>. Ajustez selon votre goût : augmentez pour plus de corps, diminuez pour plus de clarté et de complexité aromatique.</p><h3>La mouture</h3><p>Pour un V60, visez une mouture <strong>moyenne-fine</strong>, similaire à du sucre en poudre. Pour une Chemex, légèrement plus grossière. L'uniformité de la mouture est primordiale — un bon moulin à meules coniques fait toute la différence.</p><h3>La technique du bloom</h3><p>Versez d'abord <strong>2× le poids du café en eau</strong> (120ml pour 60g). Attendez 30 à 45 secondes. Ce bloom dégazéifie le café frais et prépare une extraction homogène. Vous verrez le café gonfler — signe de fraîcheur.</p><h3>L'extraction</h3><p>Versez ensuite le reste de l'eau en cercles concentriques, lentement, en maintenant un niveau constant. Temps total : <strong>3 à 4 minutes</strong>. Si l'extraction est trop rapide, affinez la mouture. Trop lente, grossissez-la.</p>",
+    "author": "L'équipe Café Maison",
+    "published": true,
+    "featured": true,
+    "created": "2026-04-27",
+    "image": ""
+  },
+  {
+    "id": "a2",
+    "title": "Notre voyage en Éthiopie",
+    "slug": "voyage-ethiopie",
+    "page": "blog",
+    "cat": "Voyage",
+    "excerpt": "Deux semaines à Yirgacheffe pour sélectionner notre récolte 2024 et rencontrer les producteurs.",
+    "content": "<p>L'Éthiopie est le berceau du café. Dans les forêts de la région de Kaffa, Coffea arabica pousse encore à l'état sauvage. C'est dans cet esprit que nous avons fait le voyage pour la troisième fois.</p><h3>La rencontre avec Abebe</h3><p>Producteur de la 3e génération à Yirgacheffe, Abebe cultive ses caféiers centenaires à 2100m d'altitude. La cueillette est 100% manuelle et sélective — uniquement les cerises rouges à maturité parfaite.</p><h3>La station de lavage</h3><p>Les cerises sont traitées dans les 6 heures après récolte. Ce soin extrême préserve les arômes floraux si caractéristiques de ce terroir : jasmin, bergamote, agrumes confits.</p>",
+    "author": "Marie & Thomas",
+    "published": true,
+    "featured": false,
+    "created": "2026-04-20",
+    "image": ""
+  },
+  {
+    "id": "a3",
+    "title": "Torréfaction légère : pourquoi ?",
+    "slug": "torrefaction-legere",
+    "page": "blog",
+    "cat": "Éducation",
+    "excerpt": "Longtemps associée à l'aigreur, la torréfaction légère révèle en réalité la plus grande complexité aromatique.",
+    "content": "<p>La torréfaction légère est souvent mal comprise. Beaucoup pensent qu'un café foncé est plus fort — ce n'est pas tout à fait juste.</p><h3>Ce que la chaleur fait au grain</h3><p>Durant la torréfaction, la réaction de Maillard crée des centaines de composés aromatiques. Une <strong>torréfaction légère</strong> (fin du premier crack, 195-205°C) préserve les sucres naturels et les notes d'origine : fruits, fleurs, agrumes. Plus on pousse, plus ces notes disparaissent au profit du chocolat, caramel, fumé.</p><h3>Notre philosophie</h3><p>Nous torréfions légèrement nos single origins pour respecter le travail des producteurs. Nous gardons une torréfaction médium pour nos blends espresso, afin d'obtenir la douceur et le corps attendus.</p>",
+    "author": "Thomas, torréfacteur",
+    "published": true,
+    "featured": false,
+    "created": "2026-04-12",
+    "image": ""
+  }
+]

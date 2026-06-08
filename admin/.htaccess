@@ -1,0 +1,26 @@
+# Protection du répertoire admin
+Options -Indexes
+ServerSignature Off
+
+# Bloquer l'accès à inc/ depuis le web (ce sont des includes PHP)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^inc/ - [F,L]
+</IfModule>
+
+# Seuls les .php sont accessibles, pas les autres fichiers
+<FilesMatch "\.(json|log|sh|sql|env|txt|md)$">
+  Require all denied
+</FilesMatch>
+
+# Headers sécurité renforcés pour l'admin
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+  Header always set Cache-Control "no-store, no-cache, must-revalidate"
+  Header always set Pragma "no-cache"
+</IfModule>
+
+# PHP : masquer les erreurs en production
+<IfModule mod_php.c>
+  php_flag display_errors Off
+</IfModule>

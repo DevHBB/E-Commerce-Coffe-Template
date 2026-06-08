@@ -1,0 +1,25 @@
+{
+  "super_admin": [
+    "all"
+  ],
+  "admin": [
+    "dashboard",
+    "products",
+    "orders",
+    "clients",
+    "newsletter",
+    "ateliers",
+    "articles",
+    "giftcards",
+    "featured",
+    "settings",
+    "pages",
+    "log"
+  ],
+  "editor": [
+    "dashboard",
+    "products",
+    "articles",
+    "newsletter"
+  ]
+}

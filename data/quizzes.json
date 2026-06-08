@@ -1,0 +1,132 @@
+[
+  {
+    "id": "quiz_cafe",
+    "title": "Quel café vous correspond ?",
+    "subtitle": "4 questions pour trouver votre café idéal",
+    "cat_id": "cat_cafe",
+    "active": true,
+    "questions": [
+      {
+        "q": "Quelle préparation utilisez-vous ?",
+        "opts": [
+          "Expresso",
+          "Filtre",
+          "French press",
+          "Capsules"
+        ]
+      },
+      {
+        "q": "Quelle intensité préférez-vous ?",
+        "opts": [
+          "Très léger",
+          "Équilibré",
+          "Intense",
+          "Très fort"
+        ]
+      },
+      {
+        "q": "Quels arômes vous attirent ?",
+        "opts": [
+          "Fruité & floral",
+          "Chocolat & noisette",
+          "Épicé & boisé",
+          "Caramel & doux"
+        ]
+      },
+      {
+        "q": "Vous le buvez…",
+        "opts": [
+          "Noir",
+          "Avec du lait",
+          "Avec du sucre",
+          "En latte / cappuccino"
+        ]
+      }
+    ],
+    "profiles": [
+      {
+        "id": "p_doux",
+        "title": "Le Doux",
+        "emoji": "🌸",
+        "desc": "Cafés légers et fruités, torréfaction claire, parfaits en filtre.",
+        "filter": "origin=Ethiopie",
+        "cta": "Voir les cafés légers",
+        "color": "#f4a261"
+      },
+      {
+        "id": "p_intense",
+        "title": "L'Intense",
+        "emoji": "🔥",
+        "desc": "Cafés corsés, blends puissants, parfaits en expresso.",
+        "filter": "roast=Forte",
+        "cta": "Voir les cafés intenses",
+        "color": "#e76f51"
+      },
+      {
+        "id": "p_equilibre",
+        "title": "L'Équilibré",
+        "emoji": "☕",
+        "desc": "Cafés polyvalents, idéaux pour toutes les méthodes.",
+        "filter": "",
+        "cta": "Voir toute la boutique",
+        "color": "#C8561E"
+      }
+    ],
+    "scoring": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    ]
+  }
+]

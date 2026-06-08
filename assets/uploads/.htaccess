@@ -1,0 +1,4 @@
+# Bloquer l'exécution de PHP dans les uploads
+<FilesMatch "\.php$">
+  Require all denied
+</FilesMatch>

@@ -1,0 +1,5 @@
+# Allow PHP execution in api/
+Options -Indexes
+<FilesMatch "\.php$">
+  Require all granted
+</FilesMatch>

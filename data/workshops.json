@@ -1,0 +1,62 @@
+[
+  {
+    "id": "w1",
+    "name": "Initiation à la dégustation",
+    "slug": "initiation-degustation",
+    "duration": "2h",
+    "price": 45,
+    "capacity": 8,
+    "desc": "Apprenez à identifier arômes, saveurs et défauts. Dégustation guidée de 5 origines différentes en méthode comparative.",
+    "schedule": "Tous les samedis à 10h",
+    "level": "Débutant",
+    "emoji": "👃",
+    "active": true,
+    "image": "",
+    "delivery_mode": "pickup"
+  },
+  {
+    "id": "w2",
+    "name": "Méthodes douces — Filtre",
+    "slug": "methodes-douces-filtre",
+    "duration": "3h",
+    "price": 65,
+    "capacity": 6,
+    "desc": "Maîtrisez V60, Aeropress et Chemex. Comprendre les variables pour reproduire un résultat parfait chez vous.",
+    "schedule": "1er et 3e dimanche à 14h",
+    "level": "Intermédiaire",
+    "emoji": "☕",
+    "active": true,
+    "image": "",
+    "delivery_mode": "pickup"
+  },
+  {
+    "id": "w3",
+    "name": "L'espresso de A à Z",
+    "slug": "espresso-a-z",
+    "duration": "3h30",
+    "price": 80,
+    "capacity": 4,
+    "desc": "Du réglage du moulin à l'extraction parfaite. Comprenez la physique de l'espresso sur machine professionnelle.",
+    "schedule": "Sur demande (min. 2 pers.)",
+    "level": "Avancé",
+    "emoji": "🫘",
+    "active": true,
+    "image": "",
+    "delivery_mode": "pickup"
+  },
+  {
+    "id": "w4",
+    "name": "Torréfaction maison",
+    "slug": "torrefaction-maison",
+    "duration": "4h",
+    "price": 95,
+    "capacity": 4,
+    "desc": "Découvrez les secrets de la torréfaction artisanale. Torréfiez vous-même et repartez avec votre production.",
+    "schedule": "Sur demande",
+    "level": "Avancé",
+    "emoji": "🔥",
+    "active": true,
+    "image": "",
+    "delivery_mode": "pickup"
+  }
+]
