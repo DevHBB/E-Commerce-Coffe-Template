@@ -28,6 +28,8 @@ $api_url = "https://api.github.com/repos/{$gh_user}/{$gh_repo}";
 $zip_url = "https://github.com/{$gh_user}/{$gh_repo}/archive/refs/heads/{$branch}.zip";
 
 $local_version  = file_exists(UPDATE_VERSION_FILE) ? trim(file_get_contents(UPDATE_VERSION_FILE)) : '—';
+$sha_file  = ROOT . '/.last_commit_sha';
+$local_sha = file_exists($sha_file) ? trim(file_get_contents($sha_file)) : '';
 $action         = $_POST['action'] ?? '';
 $msg_ok         = '';
 $msg_err        = '';
@@ -76,10 +78,12 @@ if ($gh_user !== 'VOTRE_USERNAME') {
     $releases    = gh_fetch("{$api_url}/releases/latest");
     $remote_info = $commits;
 
-    // Version = tag du dernier release ou SHA court du dernier commit
+    // Version = tag du dernier release s'il existe, sinon SHA court du commit
     if ($releases && isset($releases['tag_name'])) {
         $remote_version = $releases['tag_name'];
+        $remote_sha     = $releases['tag_name'];
     } elseif ($commits && isset($commits['sha'])) {
+        $remote_sha     = $commits['sha']; // SHA complet pour comparaison exacte
         $remote_version = 'commit ' . substr($commits['sha'], 0, 7);
     }
 }
@@ -183,6 +187,11 @@ if ($action === 'do_update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
                         file_put_contents(UPDATE_VERSION_FILE, $new_ver);
                         $local_version = $new_ver;
                     }
+                    // Sauvegarder le SHA du commit installé pour comparaison précise
+                    if ($remote_sha) {
+                        file_put_contents(ROOT . '/.last_commit_sha', $remote_sha);
+                        $local_sha = $remote_sha;
+                    }
 
                     // 7. Nettoyer
                     rrmdir($tmp_dir);
@@ -284,8 +293,26 @@ include ROOT . '/admin/inc/layout.php';
     </div>
   </div>
 
+  <?php
+    // Comparer: si on a un SHA local et remote → comparaison exacte
+    $is_uptodate = false;
+    if ($remote_sha && $local_sha) {
+        $is_uptodate = ($local_sha === $remote_sha);
+    } elseif ($remote_version && $local_version !== '—') {
+        $is_uptodate = ($local_version === $remote_version);
+    }
+  ?>
+  <?php if ($is_uptodate): ?>
+  <div style="background:rgba(42,76,30,.08);border:1px solid rgba(42,76,30,.2);border-radius:var(--r);padding:.7rem 1rem;font-size:.83rem;color:#2a4c1e">
+    ✅ Le site est à jour.
+  </div>
+  <?php elseif ($remote_version): ?>
+  <div style="background:rgba(200,86,30,.08);border:1px solid rgba(200,86,30,.25);border-radius:var(--r);padding:.7rem 1rem;font-size:.83rem;color:var(--or)">
+    🔄 Mise à jour disponible.
+  </div>
+  <?php endif; ?>
   <?php if ($remote_info && isset($remote_info['commit'])): ?>
-  <div style="font-size:.78rem;color:var(--gy2);background:var(--cr);border-radius:var(--r);padding:.6rem .9rem">
+  <div style="font-size:.78rem;color:var(--gy2);background:var(--cr);border-radius:var(--r);padding:.6rem .9rem;margin-top:.6rem">
     📝 Dernier commit :
     <strong><?= e(substr($remote_info['commit']['message'] ?? '', 0, 80)) ?></strong>
     <span style="color:var(--gy3)">— <?= e($remote_info['commit']['author']['name'] ?? '') ?> · <?= e(substr($remote_info['commit']['committer']['date'] ?? '', 0, 10)) ?></span>
