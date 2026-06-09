@@ -192,6 +192,11 @@ if ($action === 'do_update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
                         file_put_contents(ROOT . '/.last_commit_sha', $remote_sha);
                         $local_sha = $remote_sha;
                     }
+                    // Toujours mettre à jour version.txt avec la version GitHub
+                    if ($remote_version) {
+                        file_put_contents(UPDATE_VERSION_FILE, $remote_version);
+                        $local_version = $remote_version;
+                    }
 
                     // 7. Nettoyer
                     rrmdir($tmp_dir);
