@@ -245,7 +245,7 @@ include ROOT . '/admin/inc/layout.php';
     <input type="hidden" name="action" value="save_config">
     <div class="frm-row">
       <div class="frm-g">
-        <label class="frm-l">2 Utilisateur / Organisation GitHub</label>
+        <label class="frm-l">Utilisateur / Organisation GitHub</label>
         <input class="frm-i" name="gh_user" value="<?= e($cfg['update_github_user'] ?? 'DevHBB') ?>" placeholder="votre-username">
       </div>
       <div class="frm-g">
