@@ -6,31 +6,27 @@ DirectoryIndex index.php index.html
 Options -Indexes
 ServerSignature Off
 
-# ── Sécurité : bloquer accès direct aux données sensibles ────────
+# ── Réécriture d'URL ──────────────────────────────────────────────
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Bloquer data/ et includes/ depuis le web
+  # Bloquer accès direct à data/ et includes/
   RewriteRule ^data/     - [F,L]
   RewriteRule ^includes/ - [F,L]
 
-  # Si l'URL demandée n'est pas un fichier ou dossier réel → index.php
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # Racine du site → index.php (sans conditions, toujours)
   RewriteRule ^$ index.php [L]
 
-  # Redirection HTTPS (décommenter en production)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 # ── Bloquer fichiers sensibles ────────────────────────────────────
-<FilesMatch "\.(json|log|sh|sql|env|git|md|lock|ek|hash|bak)$">
+<FilesMatch "\.(json|log|sh|sql|env|git|lock|ek|hash|bak)$">
   Require all denied
 </FilesMatch>
 
-<FilesMatch "^\.(?!htaccess)">
+# Bloquer les fichiers cachés sauf .htaccess
+<FilesMatch "^\.((?!htaccess).)*$">
   Require all denied
 </FilesMatch>
 

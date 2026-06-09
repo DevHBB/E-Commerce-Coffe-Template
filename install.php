@@ -7,6 +7,12 @@ define('INSTALL_MODE', true);
 define('ROOT', __DIR__);
 define('DATA_DIR', ROOT . '/data');
 
+// Déjà installé → rediriger sauf si on vient de finir (step=3)
+if (file_exists(DATA_DIR . '/.installed') && (int)($_GET['step'] ?? 1) !== 3) {
+    header('Location: index.php');
+    exit;
+}
+
 $step = max(1, min(3, (int)($_GET['step'] ?? 1)));
 $ok   = false;
 $errs = [];
@@ -42,17 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['configure'])) {
         if (!is_dir(DATA_DIR)) mkdir(DATA_DIR, 0755, true);
         $settings['installed'] = false; // sera mis à true à l'étape 3
         file_put_contents($settings_file, json_encode($settings, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
+        // Créer le fichier sentinel AVANT de rediriger vers étape 3
+        file_put_contents(DATA_DIR . '/.installed', date('Y-m-d H:i:s'));
         header('Location: install.php?step=3'); exit;
     }
     $step = 2;
-}
-
-// ─── Marquer comme installé quand on arrive à l'étape 3 ──────────────────
-if ($step === 3) {
-    // Créer le fichier sentinel → le site est installé
-    if (!file_exists(DATA_DIR . '/.installed')) {
-        file_put_contents(DATA_DIR . '/.installed', date('Y-m-d H:i:s'));
-    }
 }
 
 // ─── Vérification serveur ──────────────────────────────────────────────────
@@ -329,6 +329,18 @@ details[open] summary::before{transform:rotate(90deg)}
     <a href="admin/" class="btn btn-primary">🚀 Aller dans l'administration</a>
     <a href="index.php" class="btn btn-secondary">🌐 Voir le site</a>
   </div>
+  <p style="text-align:center;font-size:.8rem;color:#888;margin-top:1rem">
+    Redirection automatique dans <span id="countdown">5</span>s…
+  </p>
+  <script>
+    var n = 5;
+    setInterval(function() {
+      n--;
+      var el = document.getElementById('countdown');
+      if (el) el.textContent = n;
+      if (n <= 0) window.location = 'index.php';
+    }, 1000);
+  </script>
   <?php endif; ?>
 </div>
 </body>
